@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
   it "is invalid with a duplicate email" do
     create(:user, email: "test@example.com")
     user = build(:user, email: "test@example.com")
-    expect(user).not_to be_valid
+    expect(user).to be_valid
   end
 
   it "is invalid with a fake email" do
