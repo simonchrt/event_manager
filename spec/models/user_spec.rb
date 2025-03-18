@@ -20,4 +20,9 @@ RSpec.describe User, type: :model do
     expect(build(:user, email: "toto")).not_to be_valid
   end
 
+  it "is invalid withoud a firstname" do
+    user = build(:user, first_name: nil)
+    expect(user).not_to be_valid
+  end
+
 end
